@@ -1,0 +1,12 @@
+extend /_include/_layout
+append variables
+  //- Required
+  - var pageTitle= pages[i].title;
+  - var siteDesc= pages[i].description;
+  - var canonical= pages[i].id + '/' + stations[j].id + '.html';
+  - var pathToImg = "../img/";
+  - var pathToCss = "../css/";
+  - var pathToJs = "../js/";
+  - var pathToHtml = "../";
+
+block content

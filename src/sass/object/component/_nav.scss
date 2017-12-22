@@ -1,0 +1,44 @@
+/*
+---
+name: nav
+tag:
+  - base
+category:
+  - object
+  - object/component
+  - object/component/nav
+---
+
+ナビゲーションです。
+
+```html
+<nav>
+  <ul class="c-nav">
+    <li class="c-nav__item"><a class="c-nav__link" href="#">HOME</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">ABOUT</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">CONTACT</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">ACCESS</a></li>
+  </ul>
+</nav>
+```
+
+*/
+
+.c-nav {
+  display: flex;
+  list-style: none;
+  padding: 0 16px;
+  border-bottom: 1px solid #eee;
+
+  &__item {
+  }
+
+  &__link {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    &:hover {
+      color: #333;
+    }
+  }
+}

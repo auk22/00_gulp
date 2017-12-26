@@ -14,7 +14,7 @@ category:
 * font-sizeはroot(html)に62.5%を指定しているため、1rem = 10pxです
 * 文字の単位はrem
 * ResetCSSは[ress](https://github.com/filipelinhares/ress)を使用。グローバルセレクタ（*）でbox-sizing: border-box;指定済み
-* 見出しにはfont-feature-settings: "palt" 1;を指定。safariでバグがあるので、jsで出し分けしない場合は使用しないこと
+
 
 */
 
@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-family: $font-family;
+  font-family: $gwf, $font-family;
   line-height: 1.8;
   font-size: 1.6rem;
 }

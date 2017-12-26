@@ -1,0 +1,27 @@
+/*
+---
+name: logo
+tag:
+  - base
+category:
+  - object
+  - object/component
+  - object/component/logo
+---
+
+ロゴです。
+CSVを使います
+
+```html
+
+```
+
+*/
+
+.c-logo {
+  flex: 1 1 auto;
+  &__img {
+    width: 100px;
+    height: 24px;
+  }
+}

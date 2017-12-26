@@ -1,8 +1,20 @@
 // navigation
-nav
-  ul.c-nav
-    li.c-nav__item: a.c-nav__link(href="#") HOME
-    li.c-nav__item: a.c-nav__link(href="#") ABOUT
-    li.c-nav__item: a.c-nav__link(href="#") CONTACT
-    li.c-nav__item: a.c-nav__link(href="#") ACCESS
+nav.c-nav
+  a.c-nav__tel
+    span.c-nav__icon
+    span.c-nav__text.c-nav__text--tel
+  div.c-nav__toggle#nav-toggle
+    span.c-nav__icon
+    span.c-nav__text.c-nav__text--menu
+  ul.c-nav__inner
+    li: a.c-nav__item(href="#") HOME
+    li
+      div.c-nav__item#nav-accordion ABOUT
+      ul.c-nav__inner.c-nav__inner--accordion
+        li: a.c-nav__item.c-nav__item--2nd(href="#") LINK01
+        li: a.c-nav__item.c-nav__item--2nd(href="#") LINK02
+        li: a.c-nav__item.c-nav__item--2nd(href="#") LINK03
+    li: a.c-nav__item(href="#") CONTACT
+    li: a.c-nav__item(href="#") ACCESS
+    li: span.c-nav__item.c-nav__item--close メニューを閉じる
 // /navigation

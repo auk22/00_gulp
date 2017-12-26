@@ -114,7 +114,11 @@ gulp.task('js', function() {
   gulp.src(paths.jsSrc)
       .pipe(cached('js'))
       .pipe(gulp.dest(paths.jsDir))
-      .pipe(uglify({preserveComments: 'license'}))
+      .pipe(uglify({
+        output:{
+        comments: /^!/
+      }
+      }))
       .pipe(rename({suffix: '.min'}))
       .pipe(gulp.dest(paths.jsDir))
       .pipe(browser.stream());

@@ -13,6 +13,11 @@ category:
 */
 
 .l-header {
-  background-color: #eee;
-  padding: 16px 32px;
+  flex: 1 0 auto;
+  background-color: #f9f9f9;
+  padding: 0 0 0 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 30;
 }

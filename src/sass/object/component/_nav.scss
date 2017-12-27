@@ -26,188 +26,241 @@ category:
 
 .c-nav {
   // breakpoints
-  $brk-1: 37.5em;
+  $brk-1: 37.5em; // 600px
 
-  list-style: none;
-  z-index: 20;
-  display: flex;
-
-  &__tel {
-    display: block;
-    border-left: 1px solid #eee;
-    padding: 8px 22px 4px;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  // toggleボタン
-  &__toggle {
-    border-left: 1px solid #eee;
-    padding: 8px 16px 4px;
-    cursor: pointer;
-    @media screen and (min-width: $brk-1) {
-      display: none;
-    }
-  }
-
-  // ハンバーガーアイコン
-  &__icon {
-    background-color: #a0a0a0;
-    display: block;
-    margin: 16px auto 4px;
-    height: 2px;
-    width: 24px;
-    transition: all .3s cubic-bezier(.5, 0, 0, .5);
-    // オープン時に真ん中を消す
-    .is-open & {
-      background-color: rgba(#fff, 0);
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      background-color: #a0a0a0;
-      display: block;
-      height: 2px;
-      width: 24px;
-      margin-top: -8px;
-      transition: all .3s cubic-bezier(.5, 0, 0, .5);
-      .is-open & {
-        margin-top: 0;
-        transform: rotate(45deg);
-      }
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      background-color: #a0a0a0;
-      display: block;
-      height: 2px;
-      width: 24px;
-      margin-top: 8px;
-      transition: all .3s cubic-bezier(.5, 0, 0, .5);
-      .is-open & {
-        margin-top: 0;
-        transform: rotate(-45deg);
-      }
-    }
-  }
-
-  // MENUのテキスト
-  &__text {
-    color: #555;
-    font-size: 1.2rem;
-    &--menu {
-      &:before {
-        content: "MENU";
-        transition: all .3s cubic-bezier(.5, 0, 0, .5);
-        // 親が開いているとき
-        .is-open & {
-          // content: "CLOSE";
-          color: rgba(#555, .2);
-        }
-      }
-    }
-    &--tel {
-      &:before {
-        content: "TEL";
-        transition: all .3s cubic-bezier(.5, 0, 0, .5);
-        // 親が開いているとき
-        .is-open & {
-          // content: "CLOSE";
-          color: rgba(#555, .2);
-        }
-      }
-    }
-  }
-
-  &__inner {
-    display: none;
+  // smartphone
+  @media screen and (max-width: $brk-1) {
     list-style: none;
-    position: absolute;
-    top: 62px;
-    left: 0;
-    width: 100%;
-    @media screen and (min-width: $brk-1) {
-      display: flex;
-    }
-    // アコーディオン
-    &--accordion {
-      position: relative;
-      top: 0;
-    }
-  }
+    display: flex;
 
-  &__item {
-    display: block;
-    position: relative;
-    background-color: #eee;
-    padding: 12px 16px;
-    text-decoration: none;
-    border-bottom: 1px solid #ddd;
-    color: #333;
-    cursor: pointer;
-    &:hover {
-      color: #333;
+    // telボタン
+    &__tel {
+      display: block;
+      border-left: 1px solid #eee;
+      padding: 8px 22px 4px;
+      text-align: center;
+      cursor: pointer;
+      // @media screen and (min-width: $brk-1) {
+      //   border: none;
+      //   padding: 0;
+      // }
     }
-    &:after {
-      content: "\f078";
-      font-family: "Fontawesome";
-      font-size: 1.2rem;
-      color: #777;
-      position: absolute;
-      top: 50%;
-      right: 24px;
-      margin-top: -10px;
-      transition: all .4s cubic-bezier(.5, 0, 0, .5);
+
+    // toggleボタン
+    &__toggle {
+      border-left: 1px solid #eee;
+      padding: 8px 16px 4px;
+      cursor: pointer;
+      // @media screen and (min-width: $brk-1) {
+      //   display: none;
+      // }
     }
-    &.is-open {
+
+    // ハンバーガーアイコン
+    &__icon {
+      background-color: #a0a0a0;
+      display: block;
+      margin: 16px auto 4px;
+      height: 2px;
+      width: 24px;
+      transition: all .3s cubic-bezier(.5, 0, 0, .5);
+      // オープン時に真ん中を消す
+      .is-open & {
+        background-color: rgba(#fff, 0);
+      }
+      // 上の線
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: #a0a0a0;
+        display: block;
+        height: 2px;
+        width: 24px;
+        margin-top: -8px;
+        transition: all .3s cubic-bezier(.5, 0, 0, .5);
+        // オープン時に斜めの線に
+        .is-open & {
+          margin-top: 0;
+          transform: rotate(45deg);
+        }
+      }
+      // 下の線
       &:after {
-        transform: rotate(-180deg);
+        content: "";
+        position: absolute;
+        background-color: #a0a0a0;
+        display: block;
+        height: 2px;
+        width: 24px;
+        margin-top: 8px;
+        transition: all .3s cubic-bezier(.5, 0, 0, .5);
+        // オープン時に斜めの線に
+        .is-open & {
+          margin-top: 0;
+          transform: rotate(-45deg);
+        }
       }
     }
-    // リンクアイテム
-    &[href] {
+
+    // アイコン下のテキスト
+    &__text {
+      color: #555;
+      font-size: 1.2rem;
+      &--menu {
+        transition: all .3s cubic-bezier(.5, 0, 0, .5);
+        // 親が開いているとき
+        .is-open & {
+          color: rgba(#555, .2);
+        }
+      }
+      &--tel {
+        transition: all .3s cubic-bezier(.5, 0, 0, .5);
+        // 親が開いているとき
+        .is-open & {
+          // content: "CLOSE";
+          color: rgba(#555, .2);
+        }
+      }
+    }
+
+    // ナビゲーションの中身
+    &__inner {
+      // 最初は非表示
+      // display: none;
+      background-color: rgba(#000, .5);
+      list-style: none;
+      position: absolute;
+      top: -500px;
+      left: 0;
+      width: 100%;
+      max-width: 375px;
+      transition: .5s;
+      // @media screen and (min-width: $brk-1) {
+      //   display: flex;
+      //   position: relative;
+      //   top: 0;
+      //   left: 0;
+      // }
+      // 開いているとき
+      .c-nav__toggle.is-open + & {
+        transform: translateY(562px);
+      }
+      // アコーディオン
+      &--accordion {
+        transition: .001s;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &__item {
+      display: block;
+      position: relative;
+      background-color: #eee;
+      padding: 12px 16px;
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+      color: #333;
+      cursor: pointer;
+      &:hover {
+        color: #333;
+      }
       &:after {
-        content: "\f054";
+        content: "\f078";
         font-family: "Fontawesome";
         font-size: 1.2rem;
         color: #777;
         position: absolute;
         top: 50%;
         right: 24px;
-        margin-top: -8px;
+        margin-top: -10px;
+        transition: all .4s cubic-bezier(.5, 0, 0, .5);
       }
-    }
-    // 第２階層
-    &--2nd {
-      background-color: #f9f9f9;
-    }
-    // 閉じるボタン
-    &--close {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      border-bottom: none;
-      &:hover {
+      &.is-open {
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+      // リンクアイテム
+      &[href] {
+        &:after {
+          content: "\f054";
+          font-family: "Fontawesome";
+          font-size: 1.2rem;
+          color: #777;
+          position: absolute;
+          top: 50%;
+          right: 24px;
+          margin-top: -8px;
+        }
+      }
+      // @media screen and (min-width: $brk-1) {
+      //   background-color: transparent;
+      //   border: none;
+      // }
+      // 第２階層
+      &--2nd {
+        background-color: #f9f9f9;
+        // @media screen and (min-width: $brk-1) {
+        //   display: none;
+        // }
+      }
+      // 閉じるボタン
+      &--close {
+        background-color: #333;
         color: #fff;
+        text-align: center;
+        border-bottom: none;
+        &:hover {
+          color: #fff;
+        }
+        &:after {
+          content: none;
+        }
       }
-      &:after {
-        content: none;
-      }
-      @media screen and (min-width: $brk-1) {
+    }
+
+    &__bgcover {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+
+  // Bigger than a smartphone
+  @media screen and (min-width: $brk-1) {
+
+    &__inner {
+      display: flex;
+      list-style: none;
+      &--accordion {
         display: none;
+        &:hover {
+          display: block;
+          position: absolute;
+          background-color: #555;
+        }
+      }
+    }
+
+    &__item {
+      display: block;
+      text-decoration: none;
+      padding: 16px;
+      cursor: pointer;
+      &--close {
+        display: none;
+      }
+      &#nav-accordion:hover + .c-nav__inner--accordion {
+        display: block;
+        position: absolute;
+        background-color: #555;
       }
     }
   }
 
-  &__bgcover {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(#000, .7);
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-  }
 }

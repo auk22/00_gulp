@@ -5,13 +5,13 @@
   // ハンバーガーアイコン制御
   $('#nav-toggle').click(function(){
     $(this).toggleClass('is-open');
-    if($(this).hasClass('is-open')){
-      $(this).next().fadeIn();
-      $('.c-nav__bgcover').fadeIn();
-    } else {
-      $(this).next().fadeOut();
-      $('.c-nav__bgcover').fadeOut();
-    }
+    // if($(this).hasClass('is-open')){
+    //   $(this).next().fadeIn();
+    //   $('.c-nav__bgcover').fadeIn();
+    // } else {
+    //   $(this).next().fadeOut();
+    //   $('.c-nav__bgcover').fadeOut();
+    // }
   })
 
   // 閉じるボタン、メニュー外をタップで閉じる

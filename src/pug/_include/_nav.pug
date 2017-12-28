@@ -1,20 +1,26 @@
 // navigation
 nav.c-nav
-  a.c-nav__tel
-    span.c-nav__icon
+  a.c-nav__tel(href="tel:00000000000")
+    span.c-nav__icon.c-nav__icon--tel
     span.c-nav__text.c-nav__text--tel TEL
   div.c-nav__toggle#nav-toggle
-    span.c-nav__icon
+    span.c-nav__icon.c-nav__icon--menu
     span.c-nav__text.c-nav__text--menu MENU
   ul.c-nav__inner
     li: a.c-nav__item(href="/") HOME
     li
-      span.c-nav__item#nav-accordion ABOUT
+      span.c-nav__item.nav-accordion ABOUT
+      ul.c-nav__inner.c-nav__inner--accordion
+        li: a.c-nav__item.c-nav__item--2nd(href="#") LINK01
+        li: a.c-nav__item.c-nav__item--2nd(href="#") LINK02
+        li: a.c-nav__item.c-nav__item--2nd(href="#") LINK03
+    li
+      span.c-nav__item.nav-accordion ABOUT2
       ul.c-nav__inner.c-nav__inner--accordion
         li: a.c-nav__item.c-nav__item--2nd(href="#") LINK01
         li: a.c-nav__item.c-nav__item--2nd(href="#") LINK02
         li: a.c-nav__item.c-nav__item--2nd(href="#") LINK03
     li: a.c-nav__item(href="#") CONTACT
     li: a.c-nav__item(href="#") ACCESS
-    li: span.c-nav__item.c-nav__item--close メニューを閉じる
+    li: span.c-nav__item.c-nav__item--close#nav-close メニューを閉じる
 // /navigation

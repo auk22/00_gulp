@@ -1,11 +1,13 @@
 meta(charset="UTF-8")
-meta(name="viewport" content="width=device-width,initial-scale=1")
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
-meta(name="discription" content=siteDesc)
+meta(name="viewport" content="width=device-width,initial-scale=1")
 title #{pageTitle}
-link(rel="shortcut icon" href="/path/to/favicon.ico")
-link(rel="apple-touch-icon-precomposed" href="/path/to/apple-touch-icon.png")
+meta(name="discription" content=siteDesc)
+//- faviconはルートディレクトリに置く
+link(rel="icon" href="/dammy.ico")
+//- link(rel="apple-touch-icon-precomposed" href="/path/to/apple-touch-icon.png")
 
 block css
   link(rel="stylesheet" href=pathToCss + "style.min.css")
+  //- Webfont
   link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans")

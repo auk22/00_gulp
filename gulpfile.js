@@ -27,8 +27,8 @@ var aigis   = require('gulp-aigis'); // スタイルガイド生成
 var replace = require('gulp-replace'); // ファイル内のテキスト書き換え
 var changed = require('gulp-changed'); // 変更のあったファイルのみ更新
 var cached  = require('gulp-cached'); // 変更のあったファイルのみ更新
-var notify = require("gulp-notify"); // コンパイルエラーを通知します
-var path = require('path');
+var notify  = require("gulp-notify"); // コンパイルエラーを通知します
+var path    = require('path');
 
 // File system
 var fs = require('fs');
@@ -48,13 +48,15 @@ var paths = {
   'imgDir'  : 'dist/img'
 };
 
-// プレフィックス付けるブラウザ
+// prefix
+//--------------------
 var autoprefixerOptions = {
     browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4'],
     cascade: false
 };
 
-// サーバー立ち上げ
+// server
+//--------------------
 gulp.task('server', function() {
   browser.init({
     server: {
@@ -124,13 +126,15 @@ gulp.task('js', function() {
       .pipe(browser.stream());
 });
 
-//styleguide
+// styleguide
+//--------------------
 gulp.task('aigis', function(){
   gulp.src(paths.aigisSrc + 'aigis_config.yml')
       .pipe(aigis());
 });
 
-//replace SVG
+// replace SVG
+//--------------------
 gulp.task('replaceSVG', function () {
   gulp.src(['./svg/**/*.svg'])
       .pipe(replace('<', '%3C'))
@@ -142,7 +146,8 @@ gulp.task('replaceSVG', function () {
       .pipe(gulp.dest('./svg/edited/'));
 });
 
-//watch
+// watch
+//--------------------
 gulp.task('default',['img', 'js', 'server', 'sass', 'pug',], function() {
   gulp.watch('src/pug/**/*.pug', function(e) {
     gulp.start('pug')

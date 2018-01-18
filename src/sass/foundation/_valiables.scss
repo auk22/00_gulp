@@ -30,13 +30,16 @@ category:
 
 
 // sizes
-$base-content-width: 1040px;
+$base-content-width: 1120px; //コンテンツの最大幅
 $space-unit: 16px;
 $header-height: 60px;
 $base-number: 8px;
 
 // paths
 $image-path: "../img/";
+
+// margin
+$margin-block: 16px; //基本、blockは積んでいけるようにする。
 
 // Typography
 $line-height: 1.9;
